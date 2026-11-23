@@ -1,0 +1,43 @@
+name: Build TDOA Apk
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch: # ✅ 支持手动点击打包（推荐）
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Gradle permission
+        run: chmod +x gradlew
+
+      - name: Build Debug APK（可直接安装）
+        run: ./gradlew assembleDebug
+
+      - name: Upload Debug APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: TDOA-Debug-APK
+          path: app/build/outputs/apk/debug/app-debug.apk
+          retention-days: 30
+
+      # -------- 下面是 Release 签名打包（可选，需要密钥）--------
+      # - name: Build Release APK
+      #   run: ./gradlew assembleRelease
+      # - name: Upload Release APK
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: TDOA-Release-APK
+      #     path: app/build/outputs/apk/release/app-release.apk
