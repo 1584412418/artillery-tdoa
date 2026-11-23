@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <RadioGroup
+        android:id="@+id/rg_mode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/rb_master"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="主台"/>
+        <RadioButton
+            android:id="@+id/rb_slave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="属台"
+            android:checked="true"/>
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/et_master_ip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="主台IP（属台填写）"/>
+    <EditText
+        android:id="@+id/et_temp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="温度℃"
+        android:text="15"/>
+
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="启动"/>
+    <Button
+        android:id="@+id/btn_stop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="停止"/>
+    <Button
+        android:id="@+id/btn_ntp_sync"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="NTP校时"/>
+    <Button
+        android:id="@+id/btn_gps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="GPS获取坐标"/>
+    <Button
+        android:id="@+id/btn_manual_coord"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="手动设置站点坐标"/>
+    <Button
+        android:id="@+id/btn_template"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="爆炸模板管理"/>
+    <Button
+        android:id="@+id/btn_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="历史记录"/>
+
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="状态：待机"/>
+    <TextView
+        android:id="@+id/tv_loc_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="本站高斯坐标：X=0.00 Y=0.00"/>
+</LinearLayout>
