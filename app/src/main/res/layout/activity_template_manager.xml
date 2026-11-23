@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+    <Button android:id="@+id/btn_capture" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="录制爆炸模板"/>
+    <Button android:id="@+id/btn_load" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="加载模板"/>
+    <EditText android:id="@+id/et_threshold" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="DTW阈值 0.25"/>
+    <Button android:id="@+id/btn_set_thresh" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="设置阈值"/>
+    <Button android:id="@+id/btn_back" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="返回"/>
+</LinearLayout>
