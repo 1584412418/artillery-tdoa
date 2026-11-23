@@ -1,2 +1,11 @@
-# artillery-tdoa
-Android TDOA sound source localization, MFCC+DTW sound matching
+# TDOA 爆炸声定位安卓客户端
+功能：
+- 主台/属台 UDP组网 TDOA时差定位
+- NTP网络校时
+- GPS获取高斯坐标 / 手动录入站点坐标
+- 音频采集、MFCC+VAD+CMVN+DTW爆炸声音识别触发
+- 历史定位记录CSV保存、导出
+- 模板录制、相似度阈值配置
+
+权限：录音、定位、网络
+开发语言：Kotlin
