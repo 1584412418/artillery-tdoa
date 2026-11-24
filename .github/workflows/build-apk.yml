@@ -1,4 +1,4 @@
-name: Build TDOA Apk
+）name: Build TDOA Apk
 on:
   push:
     branches: [ main ]
@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup JDK 17
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           distribution: 'temurin'
           java-version: '17'
