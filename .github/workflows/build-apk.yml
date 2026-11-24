@@ -3,7 +3,7 @@ name: Build TDOA Apk
 on:
   push:
     branches: [ main ]
-  workflow_dispatch: # 支持手动点击打包
+  workflow_dispatch:
 
 jobs:
   build:
@@ -23,16 +23,13 @@ jobs:
         with:
           packages: "platforms;android-34 build-tools;34.0.0"
 
-      - name: Gradle permission
-        run: chmod +x gradlew
-
-      - name: Gradle Cache(加速依赖下载，强烈保留)
+      - name: Install Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
           validate-wrappers: false
 
-      - name: Build Debug APK(可直接安装)
-        run: ./gradlew assembleDebug
+      - name: Build Debug APK
+        run: gradle assembleDebug
 
       - name: Upload Debug APK
         uses: actions/upload-artifact@v4
