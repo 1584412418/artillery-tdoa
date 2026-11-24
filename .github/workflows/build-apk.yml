@@ -29,7 +29,7 @@ jobs:
       - name: Gradle Cache(加速依赖下载，强烈保留)
         uses: gradle/actions/setup-gradle@v4
         with:
-          validate-wrapper: false
+          validate-wrappers: false
 
       - name: Build Debug APK(可直接安装)
         run: ./gradlew assembleDebug
